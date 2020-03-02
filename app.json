@@ -30,7 +30,7 @@
     },
     "OWNER_USERNAME": {
       "description": "Your username",
-      "value": "Linux_404"
+      "value": "rkum4rr"
     },
     "WEBHOOK": {
       "description": "Setting this to ANYTHING will enable webhooks when in env mode messages",
