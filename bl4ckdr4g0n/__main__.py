@@ -19,7 +19,7 @@ from bl4ckdr4g0n.modules.helper_funcs.chat_status import is_user_admin
 from bl4ckdr4g0n.modules.helper_funcs.misc import paginate_modules
 from bl4ckdr4g0n.modules.translations.strings import tld, tld_help
 PM_START = """Hi {}, my name is *{}* ! 
-@SarikaRoBot is the most complete Bot to help you manage your groups easily and safely! 
+@SarikaRoBot is the most complete Bot to help you manage your groups easily and safely! Handcrafted by 🇮🇳
  
 👉🏻 *Add me in a Supergroup* and promote me as *Admin* to let me get in action!
  
@@ -144,8 +144,7 @@ def send_start(bot, update):
     first_name = update.effective_user.first_name
     text = PM_START
 
-    keyboard = [[InlineKeyboardButton(text="🛠 Control panel", callback_data="cntrl_panel_M"),
-                 InlineKeyboardButton(text="📢 Support Group", url="https://t.me/rkum4rr")]]
+    keyboard = [[InlineKeyboardButton(text="➕ Add me to a Group ➕", url="http://telegram.me/SarikaRoBot?startgroup=botstart")]]
     keyboard += [[InlineKeyboardButton(text="🇺🇸 Language", callback_data="set_lang_"),
                   InlineKeyboardButton(text="❔ Help", callback_data="help_back")]]
 
