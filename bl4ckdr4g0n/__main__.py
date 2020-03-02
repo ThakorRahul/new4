@@ -18,13 +18,13 @@ from bl4ckdr4g0n.modules.connection import connected
 from bl4ckdr4g0n.modules.helper_funcs.chat_status import is_user_admin
 from bl4ckdr4g0n.modules.helper_funcs.misc import paginate_modules
 from bl4ckdr4g0n.modules.translations.strings import tld, tld_help
-PM_START = """Hello {}, my name is {}!
-I'm here to help you manage your groups!.
-you can meet my master in this [Group](https://t.me/Miss_Pious)
-you can ask everything about me in [Support Group](https://t.me/Miss_Pious)
-I'm a group manager bot and my noob master is [@SourabhXD](https://t.me/SourabhXD)
-Want to add me to your group? [Click here!](t.me/PiousS_bot?startgroup=true)
-Click (Help) button to find out more.
+PM_START = """Hi {}, my name is *{}* ! 
+@SarikaRoBot is the most complete Bot to help you manage your groups easily and safely! 
+ 
+👉🏻 *Add me in a Supergroup* and promote me as *Admin* to let me get in action!
+ 
+❓ *WHAT ARE THE COMMANDS?* ❓
+Press /help to see all the commands and how they work!
 """
 
 IMPORTED = {}
@@ -127,7 +127,7 @@ def start(bot: Bot, update: Update, args: List[str]):
             send_start(bot, update)
     else:
         try:
-            update.effective_message.reply_text("Hoi, i'm alive! PM me if you want some help ❤️")
+            update.effective_message.reply_text("Hii, i'm alive! PM me if you want some help ❤️")
         except:
             print("Nut")
 
@@ -145,7 +145,7 @@ def send_start(bot, update):
     text = PM_START
 
     keyboard = [[InlineKeyboardButton(text="🛠 Control panel", callback_data="cntrl_panel_M"),
-                 InlineKeyboardButton(text="📢 Support Group", url="https://t.me/miss_pious")]]
+                 InlineKeyboardButton(text="📢 Support Group", url="https://t.me/rkum4rr")]]
     keyboard += [[InlineKeyboardButton(text="🇺🇸 Language", callback_data="set_lang_"),
                   InlineKeyboardButton(text="❔ Help", callback_data="help_back")]]
 
@@ -669,18 +669,12 @@ if __name__ == '__main__':
     bl4ckdr4g0n.LOGGER.info("Successfully loaded")
     main()
 
-"""𝕭𝖑𝖆𝖈𝖐𝕯𝖗𝖆𝖌𝖔𝖓 bot
+"""SarikaRobot
 a modular telegram Python bot running on python3 with an sqlalchemy database.
 
 Originally a simple group management bot with multiple admin features, it has evolved, becoming extremely modular and 
 simple to use".
 
-Can be found on telegram as [𝕭𝖑𝖆𝖈𝖐𝕯𝖗𝖆𝖌𝖔𝖓](https://t.me/dr4gonbot).
 
-We've a [learning group](https://t.me/joinchat/EnD9SkO9Awougo5VjknbrQ),
 
-Join the [learning channel](https://t.me/EnglishFreeLectures) For Free Knowledge.
-
-Alternatively, [find me on telegram](https://t.me/virtualjust0and1)! (Keep all support questions in the support chat, where more people can help you.)
-
-This Bot Is Made By [@virtualjust0and1](https://t.me/virtualjust0and1)"""
+This Bot Is Made By [Love 🇮🇳](https://t.me/rkum4rr)"""
