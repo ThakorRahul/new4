@@ -4,7 +4,7 @@ import re
 from typing import Optional, List
 
 from telegram import Message, Chat, Update, Bot, User
-from telegram import ParseMode, InlineKeyboardMarkup, InlineKeyboardButton
+from telegram import ParseMode, InlineKeyboardMarkup, InlineKeyboardButton, ReplyKeyboardMarkup, KeyboardButton
 from telegram.error import Unauthorized, BadRequest, TimedOut, NetworkError, ChatMigrated, TelegramError
 from telegram.ext import CommandHandler, Filters, MessageHandler, CallbackQueryHandler
 from telegram.ext.dispatcher import run_async, DispatcherHandlerStop, Dispatcher
@@ -18,13 +18,13 @@ from bl4ckdr4g0n.modules.connection import connected
 from bl4ckdr4g0n.modules.helper_funcs.chat_status import is_user_admin
 from bl4ckdr4g0n.modules.helper_funcs.misc import paginate_modules
 from bl4ckdr4g0n.modules.translations.strings import tld, tld_help
-PM_START = """Hi {}, my name is *{}* ! 
-@SarikaRoBot is the most complete Bot to help you manage your groups easily and safely! Handcrafted by 🇮🇳
- 
-👉🏻 *Add me in a Supergroup* and promote me as *Admin* to let me get in action!
- 
-❓ *WHAT ARE THE COMMANDS?* ❓
-Press /help to see all the commands and how they work!
+PM_START = """Hlw there, my name is *{}* ! 
+want any Help click - /help
+
+Want to,
+Manager Your Group [Click Here](http://t.me/SarikaRoBot?startgroup=true)
+
+Handcrafted by *Genius* 🇮🇳
 """
 
 IMPORTED = {}
@@ -127,7 +127,7 @@ def start(bot: Bot, update: Update, args: List[str]):
             send_start(bot, update)
     else:
         try:
-            update.effective_message.reply_text("Hii, i'm alive! PM me if you want some help ❤️")
+            update.effective_message.reply_text("Hii, how are you ?")
         except:
             print("Nut")
 
@@ -534,7 +534,7 @@ def get_settings(bot: Bot, update: Update):
             text = "Click here to check your settings."
 
     else:
-        send_settings(chat.id, user.id, True)
+        send_settings(chat.id, user.id, update, True)
 
 
 def migrate_chats(bot: Bot, update: Update):
