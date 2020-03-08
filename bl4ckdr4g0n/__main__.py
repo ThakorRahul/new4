@@ -18,7 +18,7 @@ from bl4ckdr4g0n.modules.connection import connected
 from bl4ckdr4g0n.modules.helper_funcs.chat_status import is_user_admin
 from bl4ckdr4g0n.modules.helper_funcs.misc import paginate_modules
 from bl4ckdr4g0n.modules.translations.strings import tld, tld_help
-PM_START = """Hlw there, my name is *{}* ! 
+PM_START = """Hlw {}, my name is *{}* ! 
 want any Help click - /help
 
 Want to,
