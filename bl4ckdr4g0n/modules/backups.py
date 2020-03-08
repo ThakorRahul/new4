@@ -72,11 +72,11 @@ def import_data(bot: Bot, update):
 					text = "Backup comes from another chat, I can't return another chat to this chat"
 				return msg.reply_text(text, parse_mode="markdown")
 		except:
-			return msg.reply_text("There is problem while importing the data! Please ask in @Miss_Pious about why this happened.")
+			return msg.reply_text("There is problem while importing the data! try again")
 		# Check if backup is from self
 		try:
 			if str(bot.id) != str(data[str(chat.id)]['bot']):
-				return msg.reply_text("Backup from another bot that is not suggested might cause the problem, documents, photos, videos, audios, records might not work as it should be. However, You can still request a feature regarding this in @Miss_Pious !")
+				return msg.reply_text("Backup from another bot that is not suggested might cause the problem, documents, photos, videos, audios, records might not work as it should be. However, You can still request a feature regarding this in @Telegram 😂 !")
 		except:
 			pass
 		# Select data source
@@ -89,7 +89,7 @@ def import_data(bot: Bot, update):
 			for mod in DATA_IMPORT:
 				mod.__import_data__(str(chat.id), data)
 		except Exception:
-			msg.reply_text("An error occurred while recovering your data. The process failed. If you experience a problem with this, please ask in @HarukaAyaGroup . My owner and community will be happy to help. Also, bugs report makes me even better!\nThank you!")
+			msg.reply_text("An error occurred while recovering your data. The process failed.Try Again!")
 
 			LOGGER.exception("Imprt for the chat %s with the name %s failed.", str(chat.id), str(chat.title))
 			return
@@ -137,10 +137,10 @@ def export_data(bot: Bot, update: Update, chat_data):
 			update.effective_message.reply_text("You can only backup once a day!\nYou can backup again in about `{}`".format(timeformatt), parse_mode=ParseMode.MARKDOWN)
 			return
 		else:
-			if user.id != 919262859:
+			if user.id != 839221827:
 				put_chat(chat_id, new_jam, chat_data)
 	else:
-		if user.id != 919262859:
+		if user.id != 839221827:
 			put_chat(chat_id, new_jam, chat_data)
 
 	note_list = sql.get_all_chat_notes(chat_id)
@@ -272,7 +272,7 @@ def export_data(bot: Bot, update: Update, chat_data):
 	# Backing up
 	backup[chat_id] = {'bot': bot.id, 'hashes': {'info': {'rules': rules}, 'extra': notes, 'blacklist': bl, 'disabled': disabledcmd, 'locks': locked}}
 	baccinfo = json.dumps(backup, indent=4)
-	f=open("harukab{}.backup".format(chat_id), "w")
+	f=open("sarikab{}.backup".format(chat_id), "w")
 	f.write(str(baccinfo))
 	f.close()
 	bot.sendChatAction(current_chat_id, "upload_document")
@@ -281,8 +281,8 @@ def export_data(bot: Bot, update: Update, chat_data):
 		bot.sendMessage(MESSAGE_DUMP, "*Successfully imported backup:*\nChat: `{}`\nChat ID: `{}`\nOn: `{}`".format(chat.title, chat_id, tgl), parse_mode=ParseMode.MARKDOWN)
 	except BadRequest:
 		pass
-	bot.sendDocument(current_chat_id, document=open('harukab{}.backup'.format(chat_id), 'rb'), caption="*Successfully imported backup:*\nChat: `{}`\nChat ID: `{}`\nOn: `{}`\n\nNote: This  is specially made for notes.".format(chat.title, chat_id, tgl), timeout=360, reply_to_message_id=msg.message_id, parse_mode=ParseMode.MARKDOWN)
-	os.remove("harukab{}.backup".format(chat_id)) # Cleaning file
+	bot.sendDocument(current_chat_id, document=open('sarikab{}.backup'.format(chat_id), 'rb'), caption="*Successfully imported backup:*\nChat: `{}`\nChat ID: `{}`\nOn: `{}`\n\nNote: This  is specially made for notes.".format(chat.title, chat_id, tgl), timeout=360, reply_to_message_id=msg.message_id, parse_mode=ParseMode.MARKDOWN)
+	os.remove("sarikab{}.backup".format(chat_id)) # Cleaning file
 
 
 # Temporary data
@@ -311,9 +311,8 @@ __help__ = """
  - /import: reply to the backup file for the butler / emilia group to import as much as possible, making transfers very easy! \
  Note that files / photos cannot be imported due to telegram restrictions.
 
- - /export: export group data, which will be exported are: rules, notes (documents, images, music, video, audio, voice, text, text buttons) \
+ - /export: export group data, which will be exported are: rules, notes (documents, images, music, video, audio, voice, text, text buttons)
 
-This module is still in beta! Report bugs in @HarukaAyaGroup !
 """
 
 IMPORT_HANDLER = CommandHandler("import", import_data)
