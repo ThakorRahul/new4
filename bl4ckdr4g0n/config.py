@@ -3,8 +3,8 @@ class Config(object):
 
     # REQUIRED
     API_KEY = ""
-    OWNER_ID = "995737497"  # If you dont know, run the bot and do /id in your private chat with it
-    OWNER_USERNAME = "Linux_404"
+    OWNER_ID = "839221827"  # If you dont know, run the bot and do /id in your private chat with it
+    OWNER_USERNAME = "rkum4rr"
 
     # RECOMMENDED
     SQLALCHEMY_DATABASE_URI = None  # needed for any database modules
