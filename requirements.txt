@@ -26,5 +26,8 @@ tldextract
 wikipedia
 googletrans
 alphabet_detector
-gTTS
+jikanpy
+psutil
 speedtest-cli>=2.0.2
+gTTS
+
