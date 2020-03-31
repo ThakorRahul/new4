@@ -131,7 +131,7 @@ def start(bot: Bot, update: Update, args: List[str]):
             send_start(bot, update)
     else:
         try:
-            update.effective_message.reply_text("Hey! what's up?")
+            update.effective_message.reply_text("Hey! How are you?")
         except:
             print("Nut")
 
@@ -144,11 +144,14 @@ def send_start(bot, update):
         pass
 
     #chat = update.effective_chat  # type: Optional[Chat] and unused variable
-    text = "Hey there! My name is Kanna Kobayashi- I'm here to help you manage your groups!\n\
-Click Help button to find out more about how to use me to my full potential.\n\n"
+    text = """Hlw there, my name is *Sarika* ❂! 
+want any Help click - /help
 
-    text += "Want to add me to your group? [Click here!](t.me/Kanna_Chan_Bot?startgroup=true)!\n\
-    Maintained by [this awesome person](https://t.me/Okay_retard).\n\n"
+Want to,
+Manager Your Group [Click Here](http://t.me/SarikaRoBot?startgroup=true)
+
+Handcrafted by *Genius* 🇮🇳
+"""
 
     keyboard = [[InlineKeyboardButton(text="📢 Support Group", url="https://t.me/LucySupportChat")]]
     keyboard += [[InlineKeyboardButton(text="🛠 Control panel", callback_data="cntrl_panel_M")]]
